@@ -1,0 +1,306 @@
+@media screen and (max-width: 1160px){
+	.top-menu, .main-header, .home-intro, .commercial-dev, .pride, .projects, .contact-form, .footer-menu{
+		@include responsive-padding-l-r(2%);
+	}
+	.logo{
+		width: 30%;
+	}
+	img{
+		width: 100%;
+	}
+	.commercial-dev{
+		.col-2{
+			&:nth-of-type(1){
+				padding-right: 1%;
+			}
+		}
+	}
+	.intro, .testimonial, .pride{
+		background-attachment: inherit;
+	}
+	.template-2{
+		.intro{
+			background-position: 0 -11%;
+			-webkit-background-size: 100%;
+			     -o-background-size: 100%;
+			        background-size: 100%;
+		}	
+	}
+	.template-2-page{
+		position: relative;
+		margin-top: 300px;
+		z-index: 1;
+		&:before{
+			content: "";
+			position: absolute;
+			left: -5px;
+			right: 0;
+			width: 300%;
+			height: 140px;
+			z-index: 0;
+			top: -107px;
+			background-color: white;
+			@include transform(-3.6);
+		}
+	}
+}//1100
+@media screen and (max-width: 950px){
+	.desktop-menu{
+		display: none;
+	}
+	.desktop{
+		display: none;
+	}
+	.responsive-menu{
+		display: block;
+	}
+	.responsive{
+		display: block;
+	}
+	.home-intro{
+		h1{
+			width: 65%;
+		}
+	}
+	.logo{
+		width: 55%;
+	}
+	.pride{
+		padding-top: 20%;
+	}
+	.previous-project{
+		padding-top: 18%;
+	}
+	.testimonial{
+		.container{
+			padding: 14.5% 0;
+		}
+	}
+	.padding-l-r{
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+	.padding-t-b{
+		padding-top: 5%;
+		padding-bottom: 5%;
+	}
+	.template-2-page{
+		&:before{
+			top: -136px;
+		}
+	}
+	.project-image{
+		width: 100%;
+		text-align: center;
+		img{
+			width: auto;
+			max-width: 702px;
+		}
+	}
+	.project-desc{
+		width: 100%;
+		padding-left: 0;
+		margin-top: 4%;
+		margin-left: auto;
+		margin-right: auto;
+		float: left;
+		div{
+			max-width: 180px;
+		}
+	}
+}//950
+@media screen and (max-width: 782px){
+	.customize-support{
+		.header-fixed{
+			top: 46px;
+		}
+	}	
+}
+
+@media screen and (max-width: 780px){
+	.home-intro{
+		h1{
+			width: 100%;
+		}
+	}
+	.col-2{
+		width: 100%;
+		&:nth-of-type(2){
+			margin-top: 5%;
+			img{
+				float: none;
+			}
+		}
+	}
+	.commercial-dev{
+		&:nth-of-type(2){
+			text-align: center;
+		}
+	}
+	.pride{
+		padding-top: 33%;
+	}
+	.col-3{
+		width: 100%;
+	}
+	.previous-project{
+		padding-top: 25%;
+	}
+	.company-info{
+		width: 100%;
+	}
+	form{
+		width: 100%;
+		margin-top: 5%;
+	}
+	.template-2{
+		.intro{
+			background-position: 0 -1%;
+			padding-top: 34%;
+		}
+	}
+	.template-2-page{
+		margin-top: 17px;
+		&:before{
+			top: -65px;
+			height: 80px;
+		}
+	}
+}//780
+@media screen and (max-width: 600px){
+	.home-intro{
+		h1{
+			font-size: 45px;
+		}
+	}
+	.edge-after{
+		&:after{
+			height: 42px;
+		}
+	}
+	h2{
+		font-size: 25px;
+	}
+	.pride{
+		padding-top: 61%;
+	}
+	.previous-project{
+		padding-top: 40%;
+	}
+	.testimonial{
+		.container{
+			padding: 26.5% 0 14.5%;
+		}
+	}
+	.top-menu{
+		li{
+			width: 33%;
+		}
+	}
+	.template-2{
+		.intro{
+			padding-top: 60%;
+		}
+	}
+	.page-menu{
+		display: none;
+	}
+	.template-2-page{
+		&:before{
+			top: -111px;
+		}
+	}
+	.template-2-content{
+		width: 100%;
+		padding-left: 0;
+	}
+	.customize-support{
+		.header-fixed{
+			top: 48px;
+		}
+		&.on-scrolled{
+			.header-fixed{
+				top: 0;
+			}
+		}
+	}
+}//600
+@media screen and (max-width: 400px){
+	.template-2{
+		.intro{
+			background-position: 0 0;
+		}
+		.col-3{
+			margin-bottom: 15%;
+		}
+	}
+	.template-2-page{
+		&:before{
+			top: -29px;
+		}
+	}
+	.menu-button{
+		top: 28%;
+	}
+	.font-style-1{
+		&:before{
+			width: 35px;
+			height: 35px;
+			left: -40px;
+		}
+	}
+	.padding-left-for-star{
+		padding-left: 17%;
+	}
+	.home-intro{
+		min-height: inherit;
+		padding-top: 110px;
+		h1{
+			font-size: 31px;
+		}
+	}
+	.projects{
+		padding-top: 59%;
+	}
+	.company-info.padding-left-for-star{
+		padding-left: 0;
+	}
+	form{
+		button{
+			width: 100%;
+		}
+	}
+	.top-menu{
+		li{
+			width: 50%;
+		}
+	}
+	.footer-menu{
+		ul{
+			li{
+				width: 100%;
+				border-right: none;
+			}
+		}
+	}
+	.template-2-page{
+		h1{
+			margin-left: 37px;
+			font-size: 37px;
+		}
+		h2{
+			margin-left: 37px;
+		}
+	}
+
+	.project-image{
+		img{
+			width: 100%;
+		}
+	}
+	.project-navigation{
+		a{
+			font-size: 13px;
+		}
+	}
+}//400
