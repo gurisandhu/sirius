@@ -1,12 +1,12 @@
 @media screen and (max-width: 1160px){
-	.top-menu, .main-header, .home-intro, .commercial-dev, .pride, .projects, .contact-form, .footer-menu{
+	.top-menu, .main-header, .home-intro, .commercial-dev, .pride, .projects, .footer-menu, .testimonial{
 		@include responsive-padding-l-r(2%);
+	}
+	.contact-form{
+		padding-right: 2%;
 	}
 	.logo{
 		width: 30%;
-	}
-	img{
-		width: 100%;
 	}
 	.commercial-dev{
 		.col-2{
@@ -26,6 +26,11 @@
 			        background-size: 100%;
 		}	
 	}
+	.pride{
+		.col-2{
+			width: 100%;
+		}
+	}
 	.template-2-page{
 		position: relative;
 		margin-top: 300px;
@@ -43,6 +48,25 @@
 			@include transform(-3.6);
 		}
 	}
+	.col-4{
+		width: 50%;
+		&:nth-of-type(2n+2){
+			padding-right: 0;
+		}
+		&:nth-of-type(2n+3){
+			clear: left;
+		}
+	}
+	.scroll-down-wrapper{
+		left: 38.3%;
+	}
+	.home-intro-content{
+		width: 80%;
+		margin-left: 5%;
+	}
+	.previous-project{
+		padding-top: 20%;
+	}
 }//1100
 @media screen and (max-width: 950px){
 	.desktop-menu{
@@ -57,19 +81,11 @@
 	.responsive{
 		display: block;
 	}
-	.home-intro{
-		h1{
-			width: 65%;
-		}
-	}
 	.logo{
 		width: 55%;
 	}
-	.pride{
-		padding-top: 20%;
-	}
 	.previous-project{
-		padding-top: 18%;
+		padding-top: 18%!important;
 	}
 	.testimonial{
 		.container{
@@ -108,6 +124,9 @@
 			max-width: 180px;
 		}
 	}
+	.scroll-down-wrapper{
+		left: 35.3%;
+	}
 }//950
 @media screen and (max-width: 782px){
 	.customize-support{
@@ -118,11 +137,6 @@
 }
 
 @media screen and (max-width: 780px){
-	.home-intro{
-		h1{
-			width: 100%;
-		}
-	}
 	.col-2{
 		width: 100%;
 		&:nth-of-type(2){
@@ -132,13 +146,14 @@
 			}
 		}
 	}
+	.pride{
+		min-height: 722px;
+		background-position: 100%;
+	}
 	.commercial-dev{
 		&:nth-of-type(2){
 			text-align: center;
 		}
-	}
-	.pride{
-		padding-top: 33%;
 	}
 	.col-3{
 		width: 100%;
@@ -166,11 +181,46 @@
 			height: 80px;
 		}
 	}
+	.custom-cols{
+		.row{
+		> div{
+			padding-right: 0;
+			}
+		}	
+	}
+	.one-third{
+		width: 100%;
+	}
+	.two-third{
+		width: 100%;
+	}
+	.col-4{
+		width: 100%;
+	}
+	.custom-cols{
+		.col-4{
+			padding-right: 0;
+		}
+	}
+	.scroll-down-wrapper{
+		left: 27.3%;
+	}
+	.previous-project{
+		padding-top: 32%!important;
+	}
+	.testimonial{
+		min-height: 340px;
+	}
+	.template-2{
+		.intro, .intro-2{
+			min-height: 830px;
+		}
+	}
 }//780
 @media screen and (max-width: 600px){
 	.home-intro{
 		h1{
-			font-size: 45px;
+			font-size: 35px;
 		}
 	}
 	.edge-after{
@@ -181,11 +231,8 @@
 	h2{
 		font-size: 25px;
 	}
-	.pride{
-		padding-top: 61%;
-	}
 	.previous-project{
-		padding-top: 40%;
+		padding-top: 40%!important;
 	}
 	.testimonial{
 		.container{
@@ -224,6 +271,58 @@
 			}
 		}
 	}
+	.scroll-down-wrapper{
+		left: 18.3%;
+	}
+	.home-intro-content{
+		width: 90%;
+		// margin-left: 5%;
+	}
+	.pride{
+		padding-top: 45%;
+		padding-bottom: 18%;
+		background-position: 80%;
+	}
+	.overlay{
+		position: relative;
+		&:before{
+			content: "";
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			background-color: rgba(0,0,0,.4);
+		}
+	}
+	.intro-content{
+		>.container{
+			top: -513px;
+			margin-bottom: -544px;
+		}
+	}
+	.padding-t-b{
+		padding-top: 11%;
+		padding-bottom: 11%;
+	}
+	.project-image{
+		.swiper-slide{
+			min-height: 250px;
+		}
+	}
+	.template-2{
+		.intro, .intro-2{
+			min-height: 720px;
+		}
+	}
+	.template-2-page{
+		&:before{
+			top: -40px;
+		}
+	}
 }//600
 @media screen and (max-width: 400px){
 	.template-2{
@@ -256,11 +355,8 @@
 		min-height: inherit;
 		padding-top: 110px;
 		h1{
-			font-size: 31px;
+			font-size: 26px;
 		}
-	}
-	.projects{
-		padding-top: 59%;
 	}
 	.company-info.padding-left-for-star{
 		padding-left: 0;
@@ -286,7 +382,7 @@
 	.template-2-page{
 		h1{
 			margin-left: 37px;
-			font-size: 37px;
+			font-size: 25px;
 		}
 		h2{
 			margin-left: 37px;
@@ -301,6 +397,36 @@
 	.project-navigation{
 		a{
 			font-size: 13px;
+		}
+	}
+	.swiper-slide{
+		min-height: 330px;
+	}
+	.project-image{
+		min-height: 330px;
+	}
+	.scroll-down-wrapper{
+		left: 6.3%;
+	}
+	.home-intro-content{
+		padding-left: 50px;
+	}
+	.more{
+		min-width: 100%;
+	}
+	.pride{
+		padding-top: 60%;
+		padding-bottom: 25%;
+	}
+	.previous-project{
+		padding-top: 60%!important;
+	}
+	.testimonial{
+		padding-top: 15%;
+	}
+	.template-2{
+		.intro, .intro-2{
+			min-height: 670px;
 		}
 	}
 }//400

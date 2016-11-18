@@ -17,9 +17,9 @@
 <body>
 
 	<!-- header fixed -->
-	<section class="header-fixed">
-		<!-- Top menu -->
-		<section class="top-menu blue-bg desktop">
+	<header class="header-fixed shadow">
+	<!-- Top menu -->
+		<!-- <section class="top-menu blue-bg desktop">
 			<div class="container">
 				<ul class="row">
 					<li><a href="#">Sirius Consolidated</a></li>
@@ -28,7 +28,7 @@
 					<li><a href="#">Makcon Group</a></li>
 				</ul>
 			</div>
-		</section>
+		</section> -->
 		
 		<!-- Main menu and Banners -->
 		<section class="main-header">
@@ -41,4 +41,4 @@
 
 			</div>
 		</section>
-		</section>
+		</header>

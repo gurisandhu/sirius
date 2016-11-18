@@ -1,5 +1,4 @@
 // Defaul Style sheet
-
 @import 'default';
 
 // Colors
@@ -37,6 +36,14 @@ $mont: 'Montserrat', sans-serif;
 	left: 0;
 	right: 0;
 	z-index: 9;
+	&.shadow{
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e2e3d+0,1e2e3d+100&0.82+0,0+100 */
+		background: -moz-linear-gradient(top,  rgba(30,46,61,0.82) 0%, rgba(30,46,61,0) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top,  rgba(30,46,61,0.82) 0%,rgba(30,46,61,0) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom,  rgba(30,46,61,0.82) 0%,rgba(30,46,61,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d11e2e3d', endColorstr='#001e2e3d',GradientType=0 ); /* IE6-9 */
+
+	}
 }
 
 body{
@@ -51,13 +58,44 @@ body{
 }
 .hide-body{
 	&.toggle-hide-body{
-		position: absolute;
+		position: fixed;
 		top: 0;
 		left: 0;
 		right: 0;
 		bottom: 0;
 		background-color: rgba(0,0,0,0.2);
 		z-index: 8;
+	}
+	&.show-loader{
+		position: fixed;
+		z-index: 2;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: #283848; /* Old browsers */
+		background: -moz-linear-gradient(top,  #283848 0%, #283848 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top,  #283848 0%,#283848 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom,  #283848 0%,#283848 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#283848', endColorstr='#283848',GradientType=0 ); /* IE6-9 */
+		-webkit-box-shadow: none;
+		        box-shadow: none;
+		&:after{
+			content: "\f110";
+			font-family: FontAwesome;
+			display: block;
+			color: white;
+			position: absolute;
+			top: 50%;
+			font-size: 55px;
+			left: 45%;
+			// z-index: 1;
+		-webkit-animation: fa-spin 2s infinite linear;
+		   -moz-animation: fa-spin 2s infinite linear;
+		     -o-animation: fa-spin 2s infinite linear;
+		        animation: fa-spin 2s infinite linear;
+		}
 	}
 }
 .container{
@@ -73,6 +111,23 @@ body{
 }
 a{
 	color: $blue;
+}
+.table{
+	display: table;
+	width: 100%;
+}
+.table-cell{
+	display: table-cell;
+	vertical-align: middle;
+}
+section{
+	position: relative;
+	z-index: 0;
+	background-color: #FFF;
+}
+footer{
+	position: relative;
+	z-index: 2;
 }
 .top-menu{
 	ul{
@@ -139,9 +194,14 @@ a{
 						}
 					}
 				}
-				li{
+				> li{
 					&:last-child{
 						padding-right: 0;
+					}
+					&.current-menu-item, &.current-menu-ancestor{
+						> a{
+							border-color: white;
+						}
 					}
 				}
 			}
@@ -174,6 +234,7 @@ a{
 		font-family: $mont;
 		font-weight: 700;
 		color: #FFF;
+		cursor: pointer;
 		text-decoration: none;
 		border-bottom: 2px solid transparent;
 		&:hover{
@@ -206,6 +267,11 @@ a{
 				font-weight: 700;
 				&:hover{
 					border-bottom: 2px solid transparent;
+					color: $dark-grey;
+				}
+			}
+			&.current-menu-item{
+				a{
 					color: $dark-grey;
 				}
 			}
@@ -321,6 +387,7 @@ a{
 		@include transition(.3s);
 		text-decoration: none;
 		font-size: 14px;
+		font-family: $mont;
 		font-weight: 700;
 		text-transform: uppercase;
 		&:hover{
@@ -333,7 +400,12 @@ a{
 	&.show{
 		right: 0;
 	}
-}
+	.current-menu-item, .current-menu-ancestor{
+		> a{
+			color: $dark-grey;
+		}
+	}
+}//end of responsive-menu
 .has-details{
 	position: absolute;
 	cursor: pointer;
@@ -369,6 +441,7 @@ a{
 		width: 300%;
 		height: 140px;
 		z-index: 0;
+		border: 2px solid;
 	}
 }
 .edge-before{
@@ -382,38 +455,63 @@ a{
 		width: 300%;
 		height: 140px;
 		z-index: 0;
+		border: 2px solid;
 	}
 }
+
 .intro{
 	@include transition(.5s);
 	background-image: url("images/header.jpg");
 	background-repeat: no-repeat;
 	display: block;
-	background-attachment: fixed;
 	-webkit-background-size: cover;
 	     -o-background-size: cover;
 	        background-size: cover;
 	background-position: 100% 100%;
 	color: white;
-	@extend .padding-under-fixed-menu;
 	position: relative;
 	z-index: 1;
 	overflow: hidden;
 }
-.home-intro{
-	padding-bottom: 10.7%;
-	min-height: 647px;
-	h1{
-		margin-top: 10%;
-		font-size: 55px;
-		width: 45%;
-	}
+.intro-2{
+	@extend .intro;
+	color: $blue;
+}
+.home-banner-wrapper{
+	height: 110vh;
+	min-height: 500px;
 	@extend .edge-after;
 	&:after{
 		bottom: 0;
+		z-index: 1;
+		color: #FFF;
 		background-color: white;
-		@include transform(-3.6);
+		@include transform(-2.6);
 	}
+}
+.home-banner-container{
+	position: fixed;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	z-index: 1;
+}
+.home-intro{
+	height: 100%;
+	h1{
+		font-size: 40px;
+		margin-bottom: 10px;
+	}
+	.table{
+		height: 100%;
+	}
+}
+.home-intro-content{
+	background-color: rgba(30, 46, 61, 0.78);
+    padding: 30px 30px 30px 89px;
+    width: 50%;
 }
 .padding-left-for-star{
 	padding-left: 66px;
@@ -450,13 +548,31 @@ h2{
 	font-size: 35px;
 	margin-top: 0;
 	@extend .font-style-1;
-	&.blue:before{
+	&:before, &.blue:before{
 		top: 0;
 		background-image: url("images/star-blue.svg");
 	}
 	&.white:before{
 		background-image: url("images/star-white.svg");	
 	}
+}
+h3,h4,h5,h6{
+	display: block;
+	margin-top: 0;
+	margin-bottom: 15px;
+}
+h3{
+	font-size: 25px;
+	font-weight: 800;
+}
+h4{
+	font-size: 35px;
+}
+h5{
+	font-size: 30px;
+}
+h6{
+	font-size: 20px;
 }
 p{
 	color: black;
@@ -502,21 +618,26 @@ p{
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	min-height: 665px;
-	padding-top: 12%;
+	padding: 6% 0;
+	-webkit-background-size: cover;
+	     -o-background-size: cover;
+	        background-size: cover;
 	p{
 		color: white;
 	}
 	@extend .edge-before;
 	&:before{
 		top: 0;
+		color: #FFF;
 		background-color: white;
-		@include transform(3.6);
+		@include transform(2.6);
 	}
 	@extend .edge-after;
 	&:after{
 		bottom: 0;
+		color: #FFF;
 		background-color: white;
-		@include transform(-3.6);
+		@include transform(-2.6);
 	}
 }
 .projects{
@@ -524,6 +645,16 @@ p{
 	.col-3{
 		margin-top: 15px;
 		margin-bottom: 20px;
+		text-decoration: none;
+		display: block;
+		&:hover{
+			.caps{
+				color: #2196f3;
+			}
+		}
+	}
+	h3{
+		margin-bottom: 0;
 	}
 }
 .caps{
@@ -531,18 +662,23 @@ p{
 	@include transition(.3s);
 	text-decoration: none;
 	color: $blue;
-	border-bottom: 2px solid transparent;
+	font-size: 14px;
+	background-color: transparent;
+	border: none;
+	padding: 0;
+	cursor: pointer;
 	&:after{
 		content: "\f105";
 		font-family: FontAwesome;
 		margin-left: 8px;
 	    position: relative;
-	    top: 2px;
-	    font-size: 21px;
+	    top: 0;
+	    font-size: 14px;
 	    font-weight: 900;
 	}
 	&:hover{
-		border-bottom: 2px solid $blue;
+		color: #2196f3;
+		border: none;
 	}
 }
 .col-3{
@@ -555,8 +691,9 @@ p{
 	@extend .edge-before;
 	&:before{
 		top: 0;
+		color: #FFF;
 		background-color: white;
-		@include transform(3.6);
+		@include transform(2.6);
 	}
 	.more{
 		margin-top: 40px;
@@ -571,18 +708,23 @@ p{
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	@extend .edge-before;
+	z-index: initial;
+	min-height: 420px;
 	&:before{
-		top: -95px;
+		top: -70px;
+		color: $light-red;
 		background-color: $light-red;
-		@include transform(-3.4);
+		@include transform(-2.4);
 		left: -4px;
 		width: 105%;
+		border-color: white;
 	}
 	@extend .edge-after;
 	&:after{
 		bottom: -95px;
+		color: #FFF;
 		background-color: white;
-		@include transform(3.4);
+		@include transform(2.4);
 		left: -4px;
 		width: 105%;
 	}
@@ -626,7 +768,7 @@ p{
 	float: left;
 	width: 35%;
 	margin: 0;
-	padding: 0;
+	padding: 0 5% 0 0;
 	li{
 		color: black;
 		padding: 0;
@@ -646,7 +788,6 @@ p{
 }
 .contact-form{
 	position: relative;
-	z-index: 1;
 }
 form{
 	float: left;
@@ -654,8 +795,10 @@ form{
 	input, textarea{
 		width: 100%;
 		float: left;
+		font-family: $mont;
 		padding: 15px 10px;
 		border: none;
+		border: 1px solid transparent;
 		font-size: 14px;
 		background-color: $light-red;
 		-webkit-border-radius: 4px;
@@ -673,7 +816,7 @@ form{
 		margin-top: 10px;
 		border: none;
 		cursor: pointer;
-		font-weight: bold;
+		font-weight: 700;
 		font-size: 18px;
 		&:hover{
 			background-color: darken($blue, 10%);
@@ -721,28 +864,62 @@ form{
 		&:before{
 			background-color: white;
 			z-index: 1;
-			height: 500px;
-			top: -455px;
+			height: 82px;
+			top: -45px;
 			left: -15px;	
 		}
 	}
 	.intro{
-		z-index: inherit;
+		z-index: initial;
+		padding-top: 164px;
+		min-height: 670px;
 		.container{
 			position: relative;
 			z-index: 3;
 		}
+		@extend .edge-after;
+		&:after{
+			bottom: 0;
+			z-index: 1;
+			color: #FFF;
+			background-color: white;
+			@include transform(-2.6);
+		}
 	}
 	.col-3{
 		margin-bottom: 5%;
+		text-decoration: none;
+		&:hover{
+			.caps{
+				color: #2196f3;
+			}
+		}
 	}
 }//end of template-2
+.intro-content{
+	z-index: 2;
+	>.container{
+		position: relative;
+		top: -455px;
+		margin-bottom: -470px;
+	}
+}
+.product-image{
+	-webkit-background-size: cover;
+	     -o-background-size: cover;
+	        background-size: cover;
+	    display: block;
+	    background-position: 50%;
+	    min-height: 170px;
+	    width: 100%;
+	    margin-bottom: 10px;
+}
 .template-2-page{
 	@extend .padding-t-b;
 	@extend .padding-l-r;
 	h1{
 		margin-left: 66px;
-		margin-bottom: 8%;
+		margin-bottom: 5%;
 		&:before{
 			top: 1px;
 		}
@@ -767,7 +944,7 @@ form{
 				@include transition(.2s);
 				text-decoration: none;
 				color: $dark-grey;
-				font-weight: bold;
+				font-weight: 700;
 				text-transform: uppercase;
 				font-family: $mont;
 				font-size: 14px;
@@ -775,7 +952,7 @@ form{
 					color: $blue;
 				}
 			}		
-			&.active{
+			&.current_page_item{
 				a{
 					color: $blue;
 				}
@@ -795,6 +972,18 @@ form{
 .project-image{
 	float: left;
 	width: 70%;
+	min-height: 430px;
+	.swiper-slide{
+		min-height: 430px;
+		background-repeat: no-repeat;
+		-webkit-background-size: cover;
+		     -o-background-size: cover;
+		        background-size: cover;
+		background-position: 50%;
+	}
+}
+.swiper-container-home{
+	height: 100%;
 }
 .project-desc{
 	float: left;
@@ -867,12 +1056,168 @@ body.customize-support{
 	}
 }
 
+.form-validation{
+	@include transition(.5s);
+	display: none;
+	border: 1px solid;
+	-webkit-border-radius: 4px;
+	        border-radius: 4px;
+	    padding: 2% 4%;
+	    text-align: center;
+	    margin-bottom: 10px;
+	p, li{
+		font-family: $mont;
+		list-style: none;
+		padding: 0;
+		margin: 0 0 5px;
+		color: $blue;
+		font-size: 14px;
+	}
+	li{
+		text-transform: uppercase;
+	}
+}
+.error-input{
+	border-color: #EF7870;
+}
+.success{
+	border-color: #56a556;
+	p, li{
+		margin-bottom: 0;
+	}
+}
+.custom-cols{
+	.col-2, .col-3, .col-4{
+		padding-right: 5%;
+		margin-bottom: 5%;
+		&:last-child{
+			padding-right: 0;
+		}
+	}
+	&.full-width{
+		padding-bottom: 5%;
+	}
+	.row{
+		> div{
+			margin-bottom: 5%;
+			padding-right: 5%;
+			&:last-child{
+				padding-right: 0;
+			}
+		}
+	}
+}
+.both-button{
+	top: 0;
+	width: 10%;
+	height: 100%;
+	margin-top: 0;
+}
+.swiper-button-next{
+	@extend .both-button;
+	background-position: 97%;
+	right: 0;
+}
+.swiper-button-prev{
+	@extend .both-button;	
+	background-position: 3%;
+	left: 0;
+}
+.scroll-down-wrapper{
+	position: fixed;
+	bottom: 0;
+	left: 42.3%;
+	width: 300px;
+	height: 100px;
+	z-index: 20;
+	-webkit-animation: godown 1.5s;
+	   -moz-animation: godown 1.5s;
+	     -o-animation: godown 1.5s;
+	        animation: godown 1.5s;
+	-webkit-animation-iteration-count: infinite;
+	   -moz-animation-iteration-count: infinite;
+	     -o-animation-iteration-count: infinite;
+	        animation-iteration-count: infinite;
+	-webkit-animation-timing-function: cubic-bezier(0.5, 0.2, 0.3, 1.0);
+	   -moz-animation-timing-function: cubic-bezier(0.5, 0.2, 0.3, 1.0);
+	     -o-animation-timing-function: cubic-bezier(0.5, 0.2, 0.3, 1.0);
+	        animation-timing-function: cubic-bezier(0.5, 0.2, 0.3, 1.0);
+	&:hover{
+		.scroll-down{
+			background-color: rgba(255, 255, 255, 0.63);
+		}
+	}
+	&.animate{
+		-webkit-animation-iteration-count: 1;
+			-moz-animation-iteration-count: 1;
+		 		-o-animation-iteration-count: 1;
+		    	animation-iteration-count: 1;
+			-webkit-animation: godown 0.7s;
+			   -moz-animation: godown 0.7s;
+			     -o-animation: godown 0.7s;
+			        animation: godown 0.7s;
+		}
+	&.hide{
+		display: none;
+	}	
+}
+.scroll-down{
+	width: 60px;
+	height: 60px;
+	z-index: 20;
+	position: relative;
+	left: 35%;
+	cursor: pointer;
+	@include transition(.3);
+	background-color: rgba(255, 255, 255, 0.33);
+	border: 2px solid rgba(255, 255, 255, 0.7);
+	-webkit-border-radius: 50%;
+	        border-radius: 50%;
+	&:after{
+		display: block;
+		position: absolute;
+		bottom: 14px;
+	    left: 27px;
+	    content: "";
+	    height: 30px;
+	    width: 2px;
+		background-color: $blue;
+	}
+	&:before{
+		content: "\f107";
+		font-family: FontAwesome;
+		position: absolute;
+		bottom: 3px;
+		color: $blue;
+		left: 18.3px;
+		font-size: 30px;
+		font-weight: 100;
+	}
+}
 
-
-
-
-
-
+@-webkit-keyframes godown{
+	from{ 
+		bottom: 80px; 
+		opacity: 0;
+		}
+	to { 
+		bottom: 0px; 
+		opacity: 1;
+		}
+}
+@keyframes godown{
+	from{ 
+		bottom: 80px; 
+		opacity: 0;
+		}
+	to { 
+		bottom: 0px; 
+		opacity: 1;
+		}
+}
+.hide{
+	display: none;
+}
 
 
 //This file link includes resonsive style and it MUST always stays at the bottom of this file. If you need to type code, please type above to this link. Don't type below of responsive file link.
