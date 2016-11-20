@@ -8,7 +8,7 @@
 			<?php endif; ?>
 
 			<?php if(get_field('company_title', 'option')): ?>
-				<li><?php the_field('company_title', 'option') ?></li>
+				<li class="u-case"><?php the_field('company_title', 'option') ?></li>
 			<?php endif; ?>
 
 			<?php if(get_field('street_address', 'option')): ?>

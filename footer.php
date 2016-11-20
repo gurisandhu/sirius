@@ -24,7 +24,7 @@
 		</ul>
 	</div>
 </section>
-<span class='hide-body show-loader'></span>
+<span class='hide-body'></span>
 </body>
 </html>
 <?php wp_footer(); ?>

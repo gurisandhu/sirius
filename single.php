@@ -22,7 +22,7 @@ get_header(); ?>
 							<?php $images = get_field('project_images_gallery'); ?>
 					<?php if($images): ?>
 						<?php foreach($images as $image): ?>
-							<div class="swiper-slide" style="background-image: url('<?php echo $image['url']; ?>');">
+							<div class="swiper-slide show-loader" style="background-image: url('<?php echo $image['url']; ?>');">
 								
 							</div>
 						<?php endforeach; ?>
@@ -82,7 +82,7 @@ $args = array(
 	<div class="container">
 		<h2 class="row blue">More Projects</h2>
 			<?php
-				while($projects->have_posts()){
+				while($projects->have_posts()):
 					$projects->the_post();
 			?>
 			<?php
@@ -100,7 +100,7 @@ $args = array(
 					<button class="caps">View Project</button>
 				</a> <!-- end of col-3 -->
 			<?php endif; ?>
-		<?php } ?>
+		<?php endwhile; ?>
 </section>
 <?php endif; ?>		
 			</div>

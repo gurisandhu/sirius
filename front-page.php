@@ -17,7 +17,7 @@ get_header();
 				<?php if(get_sub_field('home_slider_image')): ?>
 
 					<div class="swiper-slide">
-						<section class="home-intro intro" style="background-image: url('<?php echo get_sub_field('home_slider_image'); ?>')">
+						<section class="home-intro intro show-loader" style="background-image: url('<?php echo get_sub_field('home_slider_image'); ?>')">
 							<div class="table">
 								<div class="table-cell">
 									<div class="container">

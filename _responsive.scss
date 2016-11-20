@@ -83,6 +83,9 @@
 	}
 	.logo{
 		width: 55%;
+		img{
+			max-width: 150px;
+		}
 	}
 	.previous-project{
 		padding-top: 18%!important;
@@ -108,15 +111,15 @@
 	.project-image{
 		width: 100%;
 		text-align: center;
-		img{
-			width: auto;
-			max-width: 702px;
+		min-height: auto;
+		.swiper-slide{
+			min-height: 480px;
 		}
 	}
 	.project-desc{
 		width: 100%;
 		padding-left: 0;
-		margin-top: 4%;
+		margin-top: 35px;
 		margin-left: auto;
 		margin-right: auto;
 		float: left;
@@ -141,6 +144,7 @@
 		width: 100%;
 		&:nth-of-type(2){
 			margin-top: 5%;
+			text-align: center;
 			img{
 				float: none;
 			}
@@ -149,11 +153,6 @@
 	.pride{
 		min-height: 722px;
 		background-position: 100%;
-	}
-	.commercial-dev{
-		&:nth-of-type(2){
-			text-align: center;
-		}
 	}
 	.col-3{
 		width: 100%;
@@ -214,6 +213,11 @@
 	.template-2{
 		.intro, .intro-2{
 			min-height: 830px;
+		}
+	}
+	.project-image{
+		.swiper-slide{
+			min-height: 375px;
 		}
 	}
 }//780
@@ -323,6 +327,32 @@
 			top: -40px;
 		}
 	}
+	.scroll-down-wrapper{
+		display: none;
+	}
+	.home-banner-wrapper{
+		.swiper-button-white{
+			display: none;
+		}
+	}
+	.padding-left-for-star{
+		padding-left: 0;
+	}
+	h2{
+		&:before{
+			position: static;
+			margin-right: 13px;
+			float: left;
+			left: 0;
+			width: 35px;
+		}
+	}
+	section.contact-form{
+		padding-left: 5%;
+	}
+	.top-menu, .main-header, .home-intro, .commercial-dev, .pride, .footer-menu, .testimonial{
+		@include responsive-padding-l-r(20px);
+	}
 }//600
 @media screen and (max-width: 400px){
 	.template-2{
@@ -347,9 +377,6 @@
 			height: 35px;
 			left: -40px;
 		}
-	}
-	.padding-left-for-star{
-		padding-left: 17%;
 	}
 	.home-intro{
 		min-height: inherit;
@@ -381,17 +408,11 @@
 	}
 	.template-2-page{
 		h1{
-			margin-left: 37px;
 			font-size: 25px;
+			margin-left: 40px;
 		}
 		h2{
-			margin-left: 37px;
-		}
-	}
-
-	.project-image{
-		img{
-			width: 100%;
+			margin-left: 0;
 		}
 	}
 	.project-navigation{
@@ -402,9 +423,7 @@
 	.swiper-slide{
 		min-height: 330px;
 	}
-	.project-image{
-		min-height: 330px;
-	}
+
 	.scroll-down-wrapper{
 		left: 6.3%;
 	}
@@ -427,6 +446,11 @@
 	.template-2{
 		.intro, .intro-2{
 			min-height: 670px;
+		}
+	}
+	.project-image{
+		.swiper-slide{
+			min-height: 180px;
 		}
 	}
 }//400

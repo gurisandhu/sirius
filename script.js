@@ -13,6 +13,7 @@ $(document).ready(function($){
         paginationClickable: true,
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
+        loop: true,
         spaceBetween: 30
     });
 
@@ -25,6 +26,7 @@ $(document).ready(function($){
         spaceBetween: 30,
         autoplayDisableOnInteraction:false,
         autoplay: 5000,
+        loop: true,
         effect: 'fade'
     });
 
@@ -44,7 +46,8 @@ $(document).ready(function($){
 
     //show loader while loading
     $(window).bind("load", function(){
-      $('.hide-body').removeClass('show-loader');
+      $('.intro').removeClass('show-loader');
+      $('.swiper-slide').removeClass('show-loader');
     });
 
     //Responsive Menu
