@@ -82,7 +82,7 @@ $args = array(
 	<div class="container">
 		<h2 class="row blue">More Projects</h2>
 			<?php
-				while($projects->have_posts()):
+				while($projects->have_posts()){
 					$projects->the_post();
 			?>
 			<?php
@@ -100,7 +100,7 @@ $args = array(
 					<button class="caps">View Project</button>
 				</a> <!-- end of col-3 -->
 			<?php endif; ?>
-		<?php endwhile; ?>
+		<?php } ?>
 </section>
 <?php endif; ?>		
 			</div>

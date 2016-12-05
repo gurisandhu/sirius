@@ -34,13 +34,14 @@ get_header(); ?>
 	</section>
 
 
-
-	<section class="testimonial" style="background-image: url('http://103.9.170.95/~sirius/wp-content/uploads/background-dark.jpg');">
-		<div class="container">
-			<?php the_field('testimonial_text'); ?>
-			<span>- <?php the_field('testimonial_client_name'); ?></span>
-		</div>
-	</section>
+	<?php if(get_field('testimonial_text')): ?>
+		<section class="testimonial" style="background-image: url('http://103.9.170.95/~sirius/wp-content/uploads/background-dark.jpg');">
+			<div class="container">
+				<?php the_field('testimonial_text'); ?>
+				<span>- <?php the_field('testimonial_client_name'); ?></span>
+			</div>
+		</section>
+	<?php endif; ?>
 
 
 

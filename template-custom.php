@@ -7,7 +7,9 @@ get_header(); ?>
 <!-- template custom -->
 <section class="template-2">
 	<!-- Intro Banner -->
-	<section class="intro-2">
+	<section class="intro">
+	</section>
+	<section class="intro-content">
 		<div class="container">
 			<div class="row white-bg template-2-page">
 				<h1 class="blue"><?php the_title(); ?></h1>

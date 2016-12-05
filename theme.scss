@@ -151,7 +151,7 @@ body{
 		color: white;
 		top: 50%;
 		font-size: 55px;
-		left: 45%;
+		left: 47.8%;
 		// z-index: 1;
 	-webkit-animation: fa-spin 2s infinite linear;
 	   -moz-animation: fa-spin 2s infinite linear;
@@ -540,7 +540,7 @@ footer{
 }
 .home-banner-wrapper{
 	height: 110vh;
-	min-height: 600px;
+	min-height: 500px;
 	@extend .edge-after;
 	&:after{
 		bottom: 0;
@@ -1193,8 +1193,8 @@ body.customize-support{
 .scroll-down-wrapper{
 	position: fixed;
 	bottom: 0;
-	left: 42.3%;
-	width: 300px;
+	left: 47.8%;
+	width: auto;
 	height: 100px;
 	z-index: 20;
 	-webkit-animation: godown 1.5s;
@@ -1233,7 +1233,6 @@ body.customize-support{
 	height: 60px;
 	z-index: 20;
 	position: relative;
-	left: 35%;
 	cursor: pointer;
 	@include transition(.3);
 	background-color: rgba(255, 255, 255, 0.33);
@@ -1285,7 +1284,19 @@ body.customize-support{
 .hide{
 	display: none;
 }
-
+.pdf{
+	text-align: center;
+	display: block;
+	&:before{
+		content: "\f1c1";
+		font-family: FontAwesome;
+		display: block;
+	    width: 100%;
+	    text-align: center;
+	    font-size: 55px;
+	    margin-bottom: 25px;
+	}
+}
 
 //This file link includes resonsive style and it MUST always stays at the bottom of this file. If you need to type code, please type above to this link. Don't type below of responsive file link.
 @import 'responsive';
