@@ -92,6 +92,7 @@ function my_custom_post_project() {
           'public' => true,
           'has_archive' => true,
           'rewrite' => array('slug' => 'projects', 'with_front' => true),
+          'show_in_nav_menus' => true
         );
       register_post_type('project', $args);
   }

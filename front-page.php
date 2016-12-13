@@ -81,7 +81,7 @@ get_header();
 
 <?php 
 		$args = array(
-				'cat'		=> 3,
+				// 'cat'		=> 3,
 				'post_type'	=>	'project',
 				'posts_per_page'	=> 3,
 				'orderby'	=> 'rand'
@@ -94,7 +94,7 @@ get_header();
 <!-- Current Projects -->
 <section class="current-project projects">
 	<div class="container padding-left-for-star">
-		<h2 class="blue">Current Projects</h2>
+		<h2 class="blue">Projects</h2>
 			<?php
 				while($projects->have_posts()){
 					$projects->the_post();
@@ -112,46 +112,8 @@ get_header();
 			<button class="caps">View Project</button>
 		</a> <!-- end of col-3 -->
 		<?php } ?>
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>category/current-projects/" class="more">View More</a>
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>projects" class="more">View More</a>
 	</div> <!-- container -->	
-</section>
-<?php endif; ?>
-
-<?php 
-		$args = array(
-				'cat'		=> 1,
-				'post_type'	=>	'project',
-				'posts_per_page'	=> 3,
-				'orderby'	=> 'rand'
-				);
-			$projects = new WP_Query($args);
-			$category_id = get_cat_ID('previous-project');
-			$category_link = get_category_link($category_id);
-
-			if ($projects->have_posts()):?>
-<!-- Previous Projects -->
-<section class="previous-project projects">
-	<div class="container padding-left-for-star">
-		<h2 class="blue">Previous Projects</h2>
-			<?php
-				while($projects->have_posts()){
-					$projects->the_post();
-			?>
-			<?php
-			$images = get_field('project_images_gallery'); 
-			$image = $images[0];	
-		 	?>
-
-		<a href="<?php echo get_permalink(); ?>" class="col-3 "> 
-			<div class="product-image" style="background-image: url('<?php echo $image['url']; ?>');"></div>
-			
-			<h3 class="blue"><?php the_title(); ?></h3>
-			<p><?php the_field('project_content'); ?></p>
-			<button class="caps">View Project</button>
-		</a> <!-- end of col-3 -->
-		<?php } ?>
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>category/previous-projects/" class="more">View More</a>
-	</div>	
 </section>
 <?php endif; ?>
 

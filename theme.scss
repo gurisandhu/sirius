@@ -623,11 +623,11 @@ h3,h4,h5,h6{
 	margin-bottom: 15px;
 }
 h3{
-	font-size: 25px;
-	font-weight: 800;
+	font-size: 20px;
 }
 h4{
 	font-size: 35px;
+	margin-bottom: 32px;
 }
 h5{
 	font-size: 30px;
@@ -773,8 +773,8 @@ p{
 	min-height: 420px;
 	&:before{
 		top: -70px;
-		color: $light-red;
-		background-color: $light-red;
+		color: #FFF;
+		background-color: white;
 		@include transform(-2.4);
 		left: -4px;
 		width: 105%;
@@ -1286,7 +1286,6 @@ body.customize-support{
 }
 .pdf{
 	text-align: center;
-	display: block;
 	&:before{
 		content: "\f1c1";
 		font-family: FontAwesome;

@@ -4,7 +4,7 @@ Template Name: Single
 */
 get_header(); ?>
 
-
+<!-- single template -->
 <section class="template-2">
 	<!-- Intro Banner -->
 	<section class="intro">
@@ -69,7 +69,7 @@ get_header(); ?>
 		$current_cat_id = the_category_ID();
 
 $args = array(
-		'cat'		=> $current_cat_id,
+		// 'cat'		=> $current_cat_id,
 		'post_type'	=>	'project',
 		'posts_per_page'	=> 4
 		);

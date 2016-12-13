@@ -13,6 +13,10 @@ get_header(); ?>
 		<div class="container">
 			<div class="row white-bg template-2-page">
 				<h1 class="blue"><?php the_title(); ?></h1>
+				<div class="page-menu">
+					<?php wp_nav_menu( array( 'theme_location' => 'page-menu' ) ); ?>
+				</div>
+				<div class="template-2-content">
 				
 					<?php if (have_rows('column_content')): while (have_rows('column_content')): the_row(); ?>
 						<?php $full_content = get_sub_field('full_column_content'); ?>
@@ -89,6 +93,7 @@ get_header(); ?>
 					<?php endif; ?>
 
 					<?php endwhile; endif; ?> 
+				</div>
 			</div>
 		</div> <!-- end of container -->
 	</section>
