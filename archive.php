@@ -42,10 +42,10 @@ get_header(); ?>
 								
 								<div class="over-project-desc">
 									<h3 class="blue"><?php the_title() ?></h3>
-									<p><?php the_field('project_content'); ?></p>
 									<?php if (have_rows('project_description')): ?>
 										<div class="project-desc">
 											<ul>
+												<li><?php the_field('project_address'); ?></li>
 												<?php while (have_rows('project_description')): the_row();
 												$title = get_sub_field('description_title');
 												$value = get_sub_field('description_value');

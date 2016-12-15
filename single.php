@@ -35,6 +35,7 @@ get_header(); ?>
 				<?php if (have_rows('project_description')): ?>
 				<div class="project-desc">
 					<ul>
+						<li><div>Address:&nbsp;</div><div><?php the_field('project_address'); ?></div></li>
 						<?php while (have_rows('project_description')): the_row();
 						$title = get_sub_field('description_title');
 						$value = get_sub_field('description_value');
@@ -52,6 +53,9 @@ get_header(); ?>
 							<?php endif; ?>
 						</li>
 					<?php endwhile; ?>
+					<?php if(get_field('project_content')): ?>
+						<li><?php echo get_field('project_content'); ?></li>
+				<?php endif; ?>
 					</ul>
 				</div> <!-- end of description -->
 			<?php endif; ?>
@@ -93,7 +97,6 @@ $args = array(
 					
 						<div class="over-project-desc">
 							<h3 class="blue"><?php the_title() ?></h3>
-							<p><?php the_field('project_content'); ?></p>
 							<?php if (have_rows('project_description')): ?>
 								<div class="project-desc">
 									<ul>

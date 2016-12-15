@@ -44,7 +44,9 @@ function register_my_menus() {
     array(
       'header-menu' => __( 'Header Menu' ),
       'page-menu' => __( 'Page Menu' ),
-      'page-menu-second' => __('Page menu second')
+      'page-menu-second' => __('Page menu second'),
+      'page-menu-accreditation' => __('Page menu Accreditation'),
+      'page-menu-references' => __('Page menu References')
     )
   );
 }
