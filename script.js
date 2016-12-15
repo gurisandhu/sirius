@@ -13,6 +13,7 @@ $(document).ready(function($){
         paginationClickable: true,
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
+        autoplay: 3000,
         loop: true,
         spaceBetween: 30
     });
@@ -106,6 +107,7 @@ $(document).ready(function($){
         $('.scroll-down-wrapper').removeClass('hide');
       }
     });//window.scroll
+
 });//end of document ready
 
 
@@ -204,3 +206,14 @@ $(document).ready(function($){
   });
   return false;
   }//end of contactForm
+
+// ++++++++++++++++++++
+// Page with links
+// ++++++++++++++++++++
+
+function showPageWithLinksCotent(num){
+  $('.page-with-links-content').slideUp();
+  $('.page-with-links-content-'+num).slideDown();
+  $('.page-menu ul li a').removeClass('active');
+  $('.page-with-links-title-'+num+' a').addClass('active');
+}

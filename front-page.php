@@ -106,19 +106,41 @@ get_header();
 
 		<a href="<?php echo get_permalink(); ?>" class="col-3 "> 
 			<div class="product-image" style="background-image: url('<?php echo $image['url']; ?>');"></div>
-			
-			<h3 class="blue"><?php the_title() ?></h3>
-			<p><?php the_field('project_content'); ?></p>
-			<button class="caps">View Project</button>
+
+			<div class="over-project-desc">
+				<h3 class="blue"><?php the_title() ?></h3>
+				<p><?php the_field('project_content'); ?></p>
+					<?php if (have_rows('project_description')): ?>
+					<div class="project-desc">
+						<ul>
+							<?php while (have_rows('project_description')): the_row();
+							$title = get_sub_field('description_title');
+							$value = get_sub_field('description_value');
+							 ?>
+							<li>
+								<?php if($title): ?>
+									<div>
+										<?php echo $title; ?>
+									</div>
+								<?php endif; ?>
+								<?php if($value): ?>
+									<div>
+										: <?php echo $value; ?>
+									</div>
+								<?php endif; ?>
+							</li>
+						<?php endwhile; ?>
+						</ul>
+					</div> <!-- end of description -->
+				<?php endif; ?>			
+				<button class="caps">View Project</button>
+			</div> <!-- end of overview-projects -->
 		</a> <!-- end of col-3 -->
 		<?php } ?>
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>projects" class="more">View More</a>
+		<div class="row"><a href="<?php echo esc_url( home_url( '/' ) ); ?>projects" class="more">View More</a></div>
 	</div> <!-- container -->	
 </section>
 <?php endif; ?>
-
-
-
 
 <?php include (TEMPLATEPATH . '/testimonial.php'); ?>
 

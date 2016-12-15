@@ -973,7 +973,6 @@ form{
 	    background-position: 50%;
 	    min-height: 170px;
 	    width: 100%;
-	    margin-bottom: 10px;
 	    & + h3{
 	    	margin-bottom: 0;
 	    }
@@ -1004,7 +1003,7 @@ form{
 		list-style: none;
 		li{
 			margin-bottom: 5px;
-			a{
+			a, button{
 				@include transition(.2s);
 				text-decoration: none;
 				color: $dark-grey;
@@ -1012,7 +1011,7 @@ form{
 				text-transform: uppercase;
 				font-family: $mont;
 				font-size: 14px;
-				&:hover{
+				&:hover, &.active{
 					color: $blue;
 				}
 			}		
@@ -1021,6 +1020,15 @@ form{
 					color: $blue;
 				}
 			}
+		}
+	}
+	button{
+		border: none;
+		background-color: inherit;
+		text-align: left;
+		outline: none;
+		&:hover{
+			cursor: pointer;
 		}
 	}
 }
@@ -1296,6 +1304,22 @@ body.customize-support{
 	    margin-bottom: 25px;
 	}
 }
+.over-project-desc{
+	background-color: #f7f7f7;
+	padding: 15px;
+}
+.page-with-links-content{
+	display: none;
+}
+.page-with-links-content-0{
+	display: block;
+}
+
+
+
+
+
+
 
 //This file link includes resonsive style and it MUST always stays at the bottom of this file. If you need to type code, please type above to this link. Don't type below of responsive file link.
 @import 'responsive';
