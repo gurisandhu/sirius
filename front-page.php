@@ -109,10 +109,10 @@ get_header();
 
 			<div class="over-project-desc">
 				<h3 class="blue"><?php the_title() ?></h3>
-				<p><?php the_field('project_content'); ?></p>
-					<?php if (have_rows('project_description')): ?>
+				<?php if (have_rows('project_description')): ?>
 					<div class="project-desc">
 						<ul>
+							<li><?php the_field('project_address'); ?></li>
 							<?php while (have_rows('project_description')): the_row();
 							$title = get_sub_field('description_title');
 							$value = get_sub_field('description_value');
@@ -132,7 +132,7 @@ get_header();
 						<?php endwhile; ?>
 						</ul>
 					</div> <!-- end of description -->
-				<?php endif; ?>			
+				<?php endif; ?>								
 				<button class="caps">View Project</button>
 			</div> <!-- end of overview-projects -->
 		</a> <!-- end of col-3 -->

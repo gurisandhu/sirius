@@ -100,6 +100,7 @@ $args = array(
 							<?php if (have_rows('project_description')): ?>
 								<div class="project-desc">
 									<ul>
+										<li><?php the_field('project_address'); ?></li>
 										<?php while (have_rows('project_description')): the_row();
 										$title = get_sub_field('description_title');
 										$value = get_sub_field('description_value');

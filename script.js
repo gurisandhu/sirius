@@ -13,7 +13,7 @@ $(document).ready(function($){
         paginationClickable: true,
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
-        autoplay: 3000,
+        autoplay: 2500,
         loop: true,
         spaceBetween: 30
     });
@@ -26,7 +26,7 @@ $(document).ready(function($){
         prevButton: '.swiper-button-prev',
         spaceBetween: 30,
         autoplayDisableOnInteraction:false,
-        autoplay: 5000,
+        autoplay: 2500,
         loop: true,
         effect: 'fade'
     });

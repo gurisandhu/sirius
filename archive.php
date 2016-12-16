@@ -100,13 +100,12 @@ get_header(); ?>
 							?>
 							<a href="<?php echo get_permalink(); ?>" class="col-3 "> 
 
-								<div class="product-image" style="background-image: url('<?php echo $image['url']; ?>');"></div>
-								<div class="over-project-desc">
+								<div class="product-image" style="background-image: url('<?php echo $image['url']; ?>');"></div>								<div class="over-project-desc">
 									<h3 class="blue"><?php the_title() ?></h3>
-									<p><?php the_field('project_content'); ?></p>
 									<?php if (have_rows('project_description')): ?>
 										<div class="project-desc">
 											<ul>
+												<li><?php the_field('project_address'); ?></li>
 												<?php while (have_rows('project_description')): the_row();
 												$title = get_sub_field('description_title');
 												$value = get_sub_field('description_value');

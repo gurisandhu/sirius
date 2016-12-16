@@ -102,12 +102,7 @@ get_header(); ?>
 		</div> <!-- end of container -->
 	</section>
 
-	<section class="testimonial" style="background-image: url('http://103.9.170.95/~sirius/wp-content/uploads/background-dark.jpg');">
-		<div class="container">
-			<?php the_field('testimonial_text'); ?>
-			<span>- <?php the_field('testimonial_client_name'); ?></span>
-		</div>
-	</section>
+	<?php include (TEMPLATEPATH . '/testimonial.php'); ?>
 
 
 	<?php include (TEMPLATEPATH . '/contact-form.php'); ?>
