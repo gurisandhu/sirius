@@ -1,4 +1,7 @@
 <?php 
+/*
+Template Name: Single
+*/
 get_header(); ?>
 
 <!-- single template -->

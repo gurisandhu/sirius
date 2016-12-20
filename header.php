@@ -17,21 +17,15 @@
 <body>
 
 	<!-- header fixed -->
-	<header class="header-fixed shadow">
-	<!-- Top menu -->
-		<!-- <section class="top-menu blue-bg desktop">
-			<div class="container">
-				<ul class="row">
-					<li><a href="#">Sirius Consolidated</a></li>
-					<li><a href="#">Jasarra Constructions</a></li>
-					<li><a href="#">Catalyst Constructions</a></li>
-					<li><a href="#">Makcon Group</a></li>
-				</ul>
-			</div>
-		</section> -->
-		
-		<!-- Main menu and Banners -->
-		<section class="main-header">
+	<?php if (is_single() || is_archive()) : ?>
+		<header class="header-fixed projects-header">
+			<!-- Main menu and Banners -->
+			<section class="main-header">
+	<?php else: ?>
+		<header class="header-fixed no-projects-header shadow">
+			<!-- Main menu and Banners -->
+			<section class="main-header blue">
+	<?php endif; ?>
 			<div class="container">
 				<div class="logo">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php bloginfo('template_url'); ?>/compressed/images/logo.svg" alt="Sirius Consolidated Logo"></a>

@@ -6,7 +6,9 @@
 function my_styles(){
 	wp_enqueue_style('sirius-font-awesome', 'http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css?ver=4.4.2');
 
-    wp_enqueue_style('sirius-fonts-mont', 'https://fonts.googleapis.com/css?family=Montserrat:400,700');
+    wp_enqueue_style('sirius-fonts-mont', 'https://fonts.googleapis.com/css?family=Montserrat:400');
+
+    wp_enqueue_style('sirius-fonts-oswald', 'https://fonts.googleapis.com/css?family=Oswald:300,400,700');
 
     wp_enqueue_style('sirius-fonts-opensans', 'https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800');
 

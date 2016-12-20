@@ -25,9 +25,16 @@ $dark-grey: #888;
 .white-bg{
 	background-color: white;
 }
+a[href*="#"]{
+	cursor: default!important;
+	&:hover{
+		border-color: transparent!important;
+	}
+}
 // Fonts
 $open-sans: 'Open Sans', sans-serif;
-$mont: 'Montserrat', sans-serif;
+// $mont: 'Montserrat', sans-serif;
+$mont: 'Oswald', sans-serif;
 
 .header-fixed{
 	position: fixed;
@@ -224,6 +231,7 @@ footer{
 	background-color: transparent;
 	padding: 2% 0;
 }
+
 .logo{
 	float: left;
 	width: 30%;
@@ -298,6 +306,7 @@ footer{
 		cursor: pointer;
 		text-decoration: none;
 		border-bottom: 2px solid transparent;
+		text-shadow: 1px 1px 3px #0e0e0e;
 		&:hover{
 			border-color: white;
 		}
@@ -550,6 +559,10 @@ footer{
 		@include transform(-2.6);
 	}
 }
+.projects-banner-wrapper{
+	height: 100vh;
+	min-height: 500px;
+}
 .home-banner-container{
 	position: fixed;
 	bottom: 0;
@@ -558,6 +571,7 @@ footer{
 	right: 0;
 	width: 100%;
 	z-index: 1;
+	overflow: scroll;
 }
 .home-intro{
 	height: 100%;
@@ -573,6 +587,20 @@ footer{
 	background-color: rgba(30, 46, 61, 0.78);
     padding: 30px 30px 30px 89px;
     width: 50%;
+}
+.project-intro-content{
+	background-color: rgba(30, 46, 61, 0.41);
+    padding: 35px;
+    width: 35%;	
+    @include transition(.3s);
+    &:hover{
+    	background-color: rgba(30, 46, 61, 0.78);
+    }
+    h1{
+    	&:before{
+    		content: none;
+    	}
+    }
 }
 .padding-left-for-star{
 	padding-left: 66px;
@@ -621,6 +649,7 @@ h3,h4,h5,h6{
 	display: block;
 	margin-top: 0;
 	margin-bottom: 15px;
+	font-family: $mont;
 }
 h3{
 	font-size: 20px;
@@ -661,9 +690,23 @@ p{
 		color: white;
 	}
 }
+.transparent-white{
+	background-color: transparent;
+	color: white;
+	border: 2px solid white;
+	&:hover{
+		background-color: $sky-blue;
+		border-color: darken($sky-blue, 5%);
+		color: white;
+	}
+}
 .more{
 	@extend .button-style-1;
 	@extend .transparent;
+}
+.more-white{
+	@extend .button-style-1;
+	@extend .transparent-white;
 }
 
 .padding-t-b{
@@ -862,7 +905,7 @@ form{
 	input, textarea{
 		width: 100%;
 		float: left;
-		font-family: $mont;
+		font-family: $open-sans;
 		padding: 15px 10px;
 		border: none;
 		border: 1px solid transparent;
@@ -1121,22 +1164,27 @@ form{
 		}
 	}
 }
+
 .on-scrolled{
-	.main-header{
-		padding-top: 8px;
-		padding-bottom: 8px;
-		background-color: rgba(30, 46, 61, 0.86);
-	}
-	.logo{
-		img{
-			width: 50%;
+	.no-projects-header{
+		.main-header{
+			padding-top: 8px;
+			padding-bottom: 8px;
+			&.blue{
+				background-color: rgba(30, 46, 61, 0.86);
+			}
 		}
-	}
-	.desktop-menu{
-		padding: 13px 0 5px;
-	}
-	.menu-button{
-		top: 13px;
+		.logo{
+			img{
+				width: 50%;
+			}
+		}	
+		.desktop-menu{
+			padding: 13px 0 5px;
+		}
+		.menu-button{
+			top: 13px;
+		}
 	}
 }
 body.customize-support{

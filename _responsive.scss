@@ -1,3 +1,8 @@
+@media screen and (max-width: 1260px){
+	.project-intro-content{
+		margin-left: 40px;
+	}
+}
 @media screen and (max-width: 1160px){
 	.top-menu, .main-header, .home-intro, .commercial-dev, .pride, .projects, .footer-menu, .testimonial{
 		@include responsive-padding-l-r(2%);
@@ -63,6 +68,9 @@
 	.home-intro-content{
 		width: 80%;
 		margin-left: 5%;
+	}
+	.project-intro-content{
+		width: 80%;
 	}
 	.previous-project{
 		padding-top: 20%;
@@ -219,6 +227,15 @@
 		.swiper-slide{
 			min-height: 375px;
 		}
+	}
+	.project-intro-content{
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		width: 100%;
+		margin-left: 0;
+		padding: 15px 35px;
 	}
 }//780
 @media screen and (max-width: 600px){

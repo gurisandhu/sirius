@@ -38,10 +38,10 @@ $(document).ready(function($){
 
       if (scroll >= 10) {
           $("body").addClass("on-scrolled");
-          $(".header-fixed").removeClass('shadow');
+          $(".no-projects-header").removeClass('shadow');
       } else {
           $("body").removeClass("on-scrolled");
-          $(".header-fixed").addClass('shadow');
+          $(".no-projects-header").addClass('shadow');
       }
     });
 
