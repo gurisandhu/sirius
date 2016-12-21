@@ -44,4 +44,4 @@ $categories = get_queried_object();
 
 <?php endif; ?>	<!-- if $projects->have -->
 
-<?php get_foter(); ?>
+<?php get_footer(); ?>

@@ -62,9 +62,6 @@
 			clear: left;
 		}
 	}
-	.scroll-down-wrapper{
-		left: 38.3%;
-	}
 	.home-intro-content{
 		width: 80%;
 		margin-left: 5%;
@@ -74,6 +71,15 @@
 	}
 	.previous-project{
 		padding-top: 20%;
+	}
+	.projects-banner-wrapper{
+		.swiper-button-prev{
+			left: inherit;
+			right: 12%;
+		}
+		.swiper-button-prev, .swiper-button-next{
+			background-position: center 90%;
+		}	
 	}
 }//1100
 @media screen and (max-width: 950px){
@@ -134,9 +140,6 @@
 		div{
 			max-width: 180px;
 		}
-	}
-	.scroll-down-wrapper{
-		left: 35.3%;
 	}
 }//950
 @media screen and (max-width: 782px){
@@ -208,9 +211,6 @@
 		.col-4{
 			padding-right: 0;
 		}
-	}
-	.scroll-down-wrapper{
-		left: 27.3%;
 	}
 	.previous-project{
 		padding-top: 32%!important;
@@ -298,9 +298,6 @@
 			}
 		}
 	}
-	.scroll-down-wrapper{
-		left: 18.3%;
-	}
 	.home-intro-content{
 		width: 90%;
 		// margin-left: 5%;
@@ -376,6 +373,16 @@
 	.top-menu, .main-header, .home-intro, .commercial-dev, .pride, .footer-menu, .testimonial{
 		@include responsive-padding-l-r(20px);
 	}
+	.swiper-button-white{
+		z-index: 3;
+		&.show{
+			z-index: 3;
+		}
+	}
+	.close-button{
+		right: inherit;
+		left: 0;
+	}
 }//600
 @media screen and (max-width: 400px){
 	.template-2{
@@ -445,10 +452,6 @@
 	}
 	.swiper-slide{
 		min-height: 330px;
-	}
-
-	.scroll-down-wrapper{
-		left: 6.3%;
 	}
 	.home-intro-content{
 		padding-left: 50px;

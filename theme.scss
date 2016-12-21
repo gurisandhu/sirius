@@ -391,6 +391,7 @@ footer{
 	font-weight: 700;
 	text-align: right;
 	z-index: 99;
+	line-height: 1.2;
 	@include transition(.3s);
 	&:after, &:before{
 		position: absolute;
@@ -434,6 +435,7 @@ footer{
 	position: fixed;
 	right: -255px;
 	top: 0;
+	overflow: scroll;
 	bottom: 0;
 	z-index: 9;
 	width: 255px;
@@ -1260,12 +1262,12 @@ body.customize-support{
 }
 .swiper-button-next{
 	@extend .both-button;
-	background-position: 97% 35%;
+	background-position: 97%;
 	right: 2%;
 }
 .swiper-button-prev{
 	@extend .both-button;	
-	background-position: 3% 35%;
+	background-position: 3%;
 	left: 2%;
 }
 .scroll-down-wrapper{
@@ -1405,7 +1407,8 @@ body.customize-support{
 	z-index: 2;
 	left: 0;
 	bottom: 0;
-	width: 312px;
+	max-width: 312px;
+	width: 	100%;
 	cursor: pointer;
 	@include transform(-90);
 	float: left;
@@ -1494,6 +1497,7 @@ body.customize-support{
 	right: 0px;
 	top: 0px;
 	color: white;
+	z-index: 10;
 	font-size: 35px;
     padding: 14px;
     cursor: pointer;

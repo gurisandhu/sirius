@@ -116,11 +116,13 @@ $(document).ready(function($){
       $('.single-project-content').toggleClass('show-this');
       $(this).addClass('hide-this');
       $('.close-button').addClass('rotate');
+      $('.swiper-button-white').addClass('show');
     });
     $('.close-button').click(function(){
       $('.single-project-content').removeClass('show-this');
       $('.project-close-button').removeClass('hide-this');
       $('.close-button').removeClass('rotate');
+      $('.swiper-button-white').removeClass('show');
     });
 });//end of document ready
 

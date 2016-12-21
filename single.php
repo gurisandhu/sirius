@@ -62,4 +62,4 @@
 </section>  
 
 
-<?php get_foter(); ?>
+<?php get_fo0ter(); ?>
