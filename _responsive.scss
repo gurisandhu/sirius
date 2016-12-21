@@ -237,6 +237,12 @@
 		margin-left: 0;
 		padding: 15px 35px;
 	}
+	.project-close-button{
+		bottom: initial;
+	}
+	.single-project-content{
+		bottom: 0;
+	}
 }//780
 @media screen and (max-width: 600px){
 	.home-intro{

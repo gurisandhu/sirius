@@ -28,7 +28,7 @@
 	<?php endif; ?>
 			<div class="container">
 				<div class="logo">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php bloginfo('template_url'); ?>/compressed/images/logo.svg" alt="Sirius Consolidated Logo"></a>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php bloginfo('template_url'); ?>/images/logo-2.svg" alt="Sirius Consolidated Logo"></a>
 				</div>
 
 				<?php include (TEMPLATEPATH . '/menu-main.php'); ?>

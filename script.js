@@ -108,6 +108,20 @@ $(document).ready(function($){
       }
     });//window.scroll
 
+    // ++++++++++++++++++++
+    // Projects and Project page
+    // ++++++++++++++++++++
+
+    $('.project-close-button').click(function(){
+      $('.single-project-content').toggleClass('show-this');
+      $(this).addClass('hide-this');
+      $('.close-button').addClass('rotate');
+    });
+    $('.close-button').click(function(){
+      $('.single-project-content').removeClass('show-this');
+      $('.project-close-button').removeClass('hide-this');
+      $('.close-button').removeClass('rotate');
+    });
 });//end of document ready
 
 

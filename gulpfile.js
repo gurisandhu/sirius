@@ -1,7 +1,6 @@
 var gulp = require ('gulp'),
 	uglify = require('gulp-uglify'),
 	sass = require('gulp-ruby-sass'),
-	imagemin = require('gulp-imagemin'),
 	browserSync = require('browser-sync').create();
 
 
@@ -38,19 +37,12 @@ gulp.task('styles', function() {
 	  	.pipe(browserSync.stream());
 });﻿
 
-// Image compressed tasks
-gulp.task('imagemin', function(){
-	gulp.src('uploads/*')
-		.pipe(imagemin())
-		.pipe(gulp.dest('compressed/uploads'));
-});
 
 // Watch Task
 // Watches Scripts
 gulp.task('watch', ['styles'], function(){
 	gulp.watch('script.js', ['script']);
 	gulp.watch('*.scss', ['styles']);
-	gulp.watch('uploads/*', ['imagemin']);
 });
 
-gulp.task('default', ['script', 'styles', 'imagemin', 'watch', 'serve']);
+gulp.task('default', ['script', 'styles', 'watch', 'serve']);
