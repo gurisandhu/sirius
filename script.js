@@ -49,6 +49,12 @@ $(document).ready(function($){
     $(window).bind("load", function(){
       $('.intro').removeClass('show-loader');
       $('.swiper-slide').removeClass('show-loader');
+      setTimeout(function(){
+            $('.single-project-content').toggleClass('show-this');
+            $('.project-close-button').addClass('hide-this');
+            $('.close-button').addClass('rotate');
+            $('.swiper-button-white').addClass('show');
+        }, 1000);
     });
 
     //Responsive Menu
