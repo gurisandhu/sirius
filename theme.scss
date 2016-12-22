@@ -541,7 +541,7 @@ footer{
 	-webkit-background-size: cover;
 	     -o-background-size: cover;
 	        background-size: cover;
-	background-position: 100% 100%;
+	background-position: center;
 	color: white;
 	position: relative;
 	z-index: 1;
@@ -596,12 +596,12 @@ footer{
     width: 50%;
 }
 .project-intro-content{
-	background-color: rgba(30, 46, 61, 0.41);
+	background-color: rgba(30, 46, 61, 0.71);
     padding: 35px;
     width: 35%;	
     @include transition(.3s);
     &:hover{
-    	background-color: rgba(30, 46, 61, 0.78);
+    	background-color: rgba(30, 46, 61, 0.88);
     }
     h1{
     	&:before{
@@ -1171,7 +1171,35 @@ form{
 		}
 	}
 }
-
+.swiper-button-white{
+		background-image: inherit!important;
+		&:after{
+			font-family: FontAwesome;
+			display: block;
+			color: #FFF;
+			position: absolute;
+			font-size: 70px;
+			top: 50%;
+			left: 44%;
+			text-shadow: 0 0 5px #404040;
+			@include transition(.3s);
+		}
+		&:hover{
+			&:after{
+				font-size: 83px;
+			}
+		}
+	}
+	.swiper-button-next{
+		&:after{
+			content: "\f105";
+		}
+	}
+	.swiper-button-prev{
+		&:after{
+			content: "\f104";	
+		}
+	}
 .on-scrolled{
 	.no-projects-header{
 		.main-header{
@@ -1423,10 +1451,10 @@ body.customize-support{
 	    -ms-transition: ease-out .5s;
 	     -o-transition: ease-out .5s;
 	        transition: ease-out .5s;
-	background-color: rgba(30, 46, 61, 0.78);
+	background-color: rgba(30, 46, 61, 0.88);
 	color: white;
 	&:hover{
-    	background-color: rgba(30, 46, 61, 0.88);
+    	background-color: rgba(30, 46, 61, 0.95);
     }
 	h2{
 		font-size: 20px;
@@ -1453,9 +1481,9 @@ body.customize-support{
     }
     height: 312px;
     padding: 35px;
-    background-color: rgba(30, 46, 61, 0.41);
+    background-color: rgba(30, 46, 61, 0.71);
 	&:hover{
-    	background-color: rgba(30, 46, 61, 0.78);
+    	background-color: rgba(30, 46, 61, 0.88);
     }
     a{
     	@extend .more-white;

@@ -77,8 +77,11 @@
 			left: inherit;
 			right: 12%;
 		}
-		.swiper-button-prev, .swiper-button-next{
-			background-position: center 90%;
+		.swiper-button-white{
+			&:after{
+				bottom: 48px;	
+				top: initial;
+			}
 		}	
 	}
 }//1100
