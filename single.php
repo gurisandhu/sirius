@@ -12,7 +12,7 @@
 					<?php if($images): ?>
 						<?php foreach($images as $image): ?>
 							<div class="swiper-slide show-loader">
-								<section class="home-intro intro show-loader" style="background-image: url('<?php echo $image['url']; ?>');">
+								<section class="home-intro intro-projects show-loader" style="background-image: url('<?php echo $image['url']; ?>');">
 															
 								</section>
 							</div>

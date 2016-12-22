@@ -47,7 +47,7 @@ $(document).ready(function($){
 
     //show loader while loading
     $(window).bind("load", function(){
-      $('.intro').removeClass('show-loader');
+      $('.home-intro').removeClass('show-loader');
       $('.swiper-slide').removeClass('show-loader');
       setTimeout(function(){
             $('.single-project-content').toggleClass('show-this');

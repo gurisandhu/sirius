@@ -21,7 +21,7 @@ $categories = get_queried_object();
 					$image = $images[0];
 				?>
 					<div class="swiper-slide">
-						<section class="home-intro intro show-loader" style="background-image: url('<?php echo $image['url']; ?>')">
+						<section class="home-intro intro-projects show-loader" style="background-image: url('<?php echo $image['url']; ?>')">
 							<div class="table">
 								<div class="table-cell">
 									<div class="container">
