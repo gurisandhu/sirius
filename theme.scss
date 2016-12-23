@@ -575,6 +575,9 @@ footer{
 		background-color: white;
 		@include transform(-2.6);
 	}
+	.intro{
+		background-position: center;
+	}
 }
 .projects-banner-wrapper{
 	height: 100vh;
@@ -1528,6 +1531,10 @@ body.customize-support{
 		        -ms-transform: translateX(0px);
 		         -o-transform: translateX(0px);
 		            transform: translateX(0px);
+    }
+    p{
+    	color: white;
+    	margin-top: 10px;
     }
 }
 .close-content{
