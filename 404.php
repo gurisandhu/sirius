@@ -11,7 +11,7 @@
 			</div>
 		</div> <!-- end of container -->
 	</section>
-	<?php include 'contact-form.php'; ?>
+	<?php include (TEMPLATEPATH . '/contact-form.php'); ?>
 </section><!-- end of template-2 -->
 
 <?php get_footer(); ?>

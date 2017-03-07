@@ -109,30 +109,29 @@ get_header();
 
 			<div class="over-project-desc">
 				<h3 class="blue"><?php the_title() ?></h3>
-				<?php if (have_rows('project_description')): ?>
+				
 					<div class="project-desc">
 						<ul>
-							<li><?php the_field('project_address'); ?></li>
-							<?php while (have_rows('project_description')): the_row();
-							$title = get_sub_field('description_title');
-							$value = get_sub_field('description_value');
-							 ?>
-							<li>
-								<?php if($title): ?>
-									<div>
-										<?php echo $title; ?>
-									</div>
-								<?php endif; ?>
-								<?php if($value): ?>
-									<div>
-										: <?php echo $value; ?>
-									</div>
-								<?php endif; ?>
-							</li>
-						<?php endwhile; ?>
+							<?php if(get_field('project_address')): ?>
+								<li><?php the_field('project_address'); ?></li>
+							<?php endif; ?>
+							<?php if(get_field('description_1_copy')): ?>
+								<li><?php the_field('description_1_copy'); ?></li>
+							<?php endif; ?>
+							<?php if (have_rows('project_description')): ?>
+								<?php while (have_rows('project_description')): the_row();
+								$title = get_sub_field('description_title');
+								$value = get_sub_field('description_value');
+							 	?>
+									<li>
+										<?php if($title): ?>
+												<?php echo $title; ?><?php endif; ?><?php if($value): ?>: <?php echo $value; ?>
+										<?php endif; ?>
+									</li>
+								<?php endwhile; ?>
+							<?php endif; ?>								
 						</ul>
 					</div> <!-- end of description -->
-				<?php endif; ?>								
 				<button class="caps">View Project</button>
 			</div> <!-- end of overview-projects -->
 		</a> <!-- end of col-3 -->

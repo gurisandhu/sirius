@@ -54,7 +54,7 @@ $(document).ready(function($){
             $('.project-close-button').addClass('hide-this');
             $('.close-button').addClass('rotate');
             $('.swiper-button-white').addClass('show');
-        }, 1000);
+        }, 500);
     });
 
     //Responsive Menu
@@ -80,16 +80,6 @@ $(document).ready(function($){
     });
 
     // On click contact, go to contact form
-
-    $("nav ul  li a:contains('ontact')").click(function(){
-      $('html, body').animate({
-        scrollTop: $(".contact-form").offset().top
-      }, 1000);
-      $(".responsive-menu").removeClass("show");
-      $("body").removeClass("toggle-menu");
-      $(".hide-body").removeClass("toggle-hide-body");
-      $(".menu-button").removeClass("show");
-    });
 
 
     // ++++++++++++++++++++

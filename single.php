@@ -30,28 +30,30 @@
 			<div class="table-cell">
 				<div class="close-button">&times;</div>
 				<h2><?php the_title(); ?></h2>
-				<?php the_field('project_address'); ?>
+				<ul>
+				<?php if(get_field('project_address')): ?>
+					<li><?php the_field('project_address'); ?></li>
+				<?php endif; ?>
+				<?php if(get_field('description_1_copy')): ?>
+					<li><?php the_field('description_1_copy'); ?></li>
+				<?php endif; ?>
 
 				<?php if (have_rows('project_description')): ?>
-				<ul>
 					<?php while (have_rows('project_description')): the_row();
 						$title = get_sub_field('description_title');
 						$value = get_sub_field('description_value');
 						?>
 						<li>
 							<?php if($title): ?>
-								<?php echo $title; ?>
-							<?php endif; ?>
-							<?php if($value): ?>
-								: <?php echo $value; ?>
+								<?php echo $title; ?><?php endif; ?><?php if($value): ?>: <?php echo $value; ?>
 							<?php endif; ?>
 						</li>
 					<?php endwhile; ?>
 					<?php if(get_field('project_content')): ?>
 						<li><?php echo get_field('project_content'); ?></li>
 					<?php endif; ?>
-				</ul>
 				<?php endif; ?>
+				</ul>
 				<div class="row">
 					<?php previous_post_link( '%link', 'Previous Project', true ); ?>
 					<?php next_post_link( '%link', 'Next Project', true ); ?>
@@ -62,4 +64,4 @@
 </section>  
 
 
-<?php get_fo0ter(); ?>
+<?php get_footer(); ?>
